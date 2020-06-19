@@ -72,3 +72,5 @@ C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\APIFuelStation.
 C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\APIFuelStation.dll
 C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\APIFuelStation.pdb
 C:\Users\akash.corp\projs\APIFuelStation\obj\Debug\netcoreapp3.1\APIFuelStation.genruntimeconfig.cache
+C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\APIFuelStation.xml
+C:\Users\akash.corp\projs\APIFuelStation\obj\Debug\netcoreapp3.1\APIFuelStation.xml
