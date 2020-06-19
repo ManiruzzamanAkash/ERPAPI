@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using APIFuelStation.DbContexts;
+using APIFuelStation.IRepositories;
+using APIFuelStation.Repositories;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -37,6 +39,9 @@ namespace APIFuelStation {
             services.AddControllers ().AddNewtonsoftJson (s => {
                 s.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver ();
             });
+
+            // Add Tables and Repositories
+            services.AddScoped<IUserRepository, UserRepository> ();
 
             // Add CORS Policy
             services.AddCors (options => {
