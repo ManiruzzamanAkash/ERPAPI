@@ -1,3 +1,4 @@
+using APIFuelStation.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace APIFuelStation.DbContexts {
@@ -7,6 +8,6 @@ namespace APIFuelStation.DbContexts {
         }
 
         // public DbSet<Command> Commands { get; set; }
-        // public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Users { get; set; }
     }
 }
