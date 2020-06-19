@@ -33,6 +33,19 @@ namespace APIFuelStation.Controllers {
             return Ok (allUsers);
         }
 
+        // [Authorize]
+        /// <summary>
+        /// Get Single User By ID
+        /// </summary>
+        /// <returns>Get an User</returns>
+        [HttpGet ("{id}", Name = "GetUserById")]
+        public async Task<IActionResult> GetUserById (int id) {
+            var user = await _mediator.Send (new GetSingleUserQuery (id));
+            if (user == null)
+                return NotFound ();
+            return Ok (user);
+        }
+
         /// <summary>
         /// Creates a New User
         /// </summary>

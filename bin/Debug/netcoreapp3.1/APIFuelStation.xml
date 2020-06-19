@@ -10,6 +10,12 @@
             </summary>
             <returns>A New User </returns>
         </member>
+        <member name="M:APIFuelStation.Controllers.UsersController.GetUserById(System.Int32)">
+            <summary>
+            Get Single User By ID
+            </summary>
+            <returns>Get an User</returns>
+        </member>
         <member name="M:APIFuelStation.Controllers.UsersController.CreateUser(APIFuelStation.Models.User)">
              <summary>
              Creates a New User

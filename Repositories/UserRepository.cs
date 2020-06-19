@@ -47,10 +47,6 @@ namespace APIFuelStation.Repositories {
             return _context.Users.FirstOrDefault (x => x.PhoneNo == phoneNo);
         }
 
-        public bool SaveChanges () {
-            throw new System.NotImplementedException ();
-        }
-
         public async Task<User> UpdateUser (User user) {
             _context.Users.Update (user);
             await _context.SaveChangesAsync ();
