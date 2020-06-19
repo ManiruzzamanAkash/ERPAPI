@@ -4,8 +4,11 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using System.Threading.Tasks;
+using APIFuelStation.CommandBus.Commands;
 using APIFuelStation.Models;
 using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -18,24 +21,27 @@ namespace APIFuelStation.Controllers {
     public class AuthController : ControllerBase {
 
         private readonly IConfiguration _configuration;
-        public AuthController (IConfiguration confirugation) {
+        private readonly IMediator _mediator;
+        public AuthController (IConfiguration confirugation, IMediator mediator) {
             this._configuration = confirugation;
+            this._mediator = mediator;
         }
 
         [HttpPost ("Login")]
-        public IActionResult Login (string username, string password) {
-            User login = new User ();
-            login.UserName = username;
-            login.Password = password;
+        public async Task<IActionResult> Login ([FromBody] UserAuthCommand command) {
+            // User login = new User ();
+            // login.UserName = username;
+            // login.Password = password;
+            var result = await _mediator.Send (command);
+            return Ok (result);
+            // IActionResult response = Unauthorized ();
 
-            IActionResult response = Unauthorized ();
-
-            var user = AuthenticateUser (login);
-            if (user != null) {
-                var tokenStr = GenerateJSONWebToken (user);
-                response = Ok (new { token = tokenStr, user = user });
-            }
-            return response;
+            // var user = AuthenticateUser (login);
+            // if (user != null) {
+            //     var tokenStr = GenerateJSONWebToken (user);
+            //     response = Ok (new { token = tokenStr, user = user });
+            // }
+            // return response;
         }
 
         private User AuthenticateUser (User loginUser) {
@@ -46,27 +52,5 @@ namespace APIFuelStation.Controllers {
             return user;
         }
 
-        private string GenerateJSONWebToken (User user) {
-            var securityKey = new SymmetricSecurityKey (Encoding.UTF8.GetBytes (_configuration["Jwt:Key"]));
-            var credentials = new SigningCredentials (securityKey, SecurityAlgorithms.HmacSha256);
-
-            var claims = new [] {
-                new Claim (JwtRegisteredClaimNames.Sub, user.UserName),
-                new Claim (JwtRegisteredClaimNames.Email, user.Email),
-                new Claim (JwtRegisteredClaimNames.Jti, Guid.NewGuid ().ToString ())
-            };
-
-            var token = new JwtSecurityToken (
-                issuer: _configuration["Jwt:Issuer"],
-                audience : _configuration["Jwt:Issuer"],
-                claims,
-                expires : DateTime.Now.AddMinutes (120),
-                signingCredentials : credentials
-            );
-
-            var encodenToken = new JwtSecurityTokenHandler ().WriteToken (token);
-            return encodenToken;
-
-        }
     }
 }

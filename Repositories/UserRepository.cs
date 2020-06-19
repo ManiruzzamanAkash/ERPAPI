@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using APIFuelStation.DbContexts;
 using APIFuelStation.IRepositories;
 using APIFuelStation.Models;
+using BCrypt.Net;
 
 namespace APIFuelStation.Repositories {
     public class UserRepository : IUserRepository {
@@ -14,6 +15,7 @@ namespace APIFuelStation.Repositories {
         }
 
         public async Task<User> CreateUser (User user) {
+            user.Password = BCrypt.Net.BCrypt.HashPassword (user.Password);
             _context.Users.Add (user);
             await _context.SaveChangesAsync ();
             return user;
@@ -33,6 +35,18 @@ namespace APIFuelStation.Repositories {
             return _context.Users.FirstOrDefault (x => x.Id == id);
         }
 
+        public User GetUserByEmail (string email) {
+            return _context.Users.FirstOrDefault (x => x.Email == email);
+        }
+
+        public User GetUserByUserName (string userName) {
+            return _context.Users.FirstOrDefault (x => x.UserName == userName);
+        }
+
+        public User GetUserByPhoneNo (string phoneNo) {
+            return _context.Users.FirstOrDefault (x => x.PhoneNo == phoneNo);
+        }
+
         public bool SaveChanges () {
             throw new System.NotImplementedException ();
         }
@@ -42,5 +56,6 @@ namespace APIFuelStation.Repositories {
             await _context.SaveChangesAsync ();
             return user;
         }
+
     }
 }
