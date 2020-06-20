@@ -4,6 +4,136 @@
         <name>APIFuelStation</name>
     </assembly>
     <members>
+        <member name="M:APIFuelStation.Controllers.DepartmentsController.GetAllDepartments">
+            <summary>
+            Get All of the Departments List
+            </summary>
+            <returns>A New Department </returns>
+        </member>
+        <member name="M:APIFuelStation.Controllers.DepartmentsController.GetDepartmentById(System.Int32)">
+            <summary>
+            Get Single Department By ID
+            </summary>
+            <returns>Get an Department</returns>
+            <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.DepartmentsController.CreateDepartment(APIFuelStation.Models.Department)">
+             <summary>
+             Creates a New Department
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 {
+                     "id": 0,
+                     "name": "Department 1",
+                     "code": "DEP12",
+                 }
+            
+             </remarks>
+             <returns>A newly created Department Item</returns>
+             <response code="200">Returns the newly created item</response>
+             <response code="400">If any of the field is null</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.DepartmentsController.UpdateDepartment(System.Int32,APIFuelStation.Models.Department)">
+             <summary>
+             Updates a user
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 {
+                     "id": 0,
+                     "firstName": "Maniruzzaman",
+                     "lastName": "Akash",
+                     "userName": "maniruzzaman",
+                     "email": "maniruzzamanAkash@gmail.com",
+                     "phoneNo": "01951233084",
+                     "password": "123456",
+                     "avatar": "string",
+                     "gender": true
+                 }
+            
+             </remarks>
+             <returns>A newly updated Department Item</returns>
+             <response code="200">Returns the newly updated user</response>
+             <response code="400">If any of the field is null</response> 
+             <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.DepartmentsController.DeleteDepartment(System.Int32)">
+            <summary>
+            Deletes a user
+            </summary>
+            <returns>Deleted Department Item</returns>
+            <response code="200">Returns the newly deleted user</response>
+            <response code="400">If any of the field is null</response> 
+            <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.DesignationsController.GetAllDesignations">
+            <summary>
+            Get All of the Designations List
+            </summary>
+            <returns>A New Designation </returns>
+        </member>
+        <member name="M:APIFuelStation.Controllers.DesignationsController.GetDesignationById(System.Int32)">
+            <summary>
+            Get Single Designation By ID
+            </summary>
+            <returns>Get an Designation</returns>
+            <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.DesignationsController.CreateDesignation(APIFuelStation.Models.Designation)">
+             <summary>
+             Creates a New Designation
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 {
+                     "id": 0,
+                     "name": "Designation 1",
+                     "code": "DEP12",
+                 }
+            
+             </remarks>
+             <returns>A newly created Designation Item</returns>
+             <response code="200">Returns the newly created item</response>
+             <response code="400">If any of the field is null</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.DesignationsController.UpdateDesignation(System.Int32,APIFuelStation.Models.Designation)">
+             <summary>
+             Updates a user
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 {
+                     "id": 0,
+                     "firstName": "Maniruzzaman",
+                     "lastName": "Akash",
+                     "userName": "maniruzzaman",
+                     "email": "maniruzzamanAkash@gmail.com",
+                     "phoneNo": "01951233084",
+                     "password": "123456",
+                     "avatar": "string",
+                     "gender": true
+                 }
+            
+             </remarks>
+             <returns>A newly updated Designation Item</returns>
+             <response code="200">Returns the newly updated user</response>
+             <response code="400">If any of the field is null</response> 
+             <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.DesignationsController.DeleteDesignation(System.Int32)">
+            <summary>
+            Deletes a user
+            </summary>
+            <returns>Deleted Designation Item</returns>
+            <response code="200">Returns the newly deleted user</response>
+            <response code="400">If any of the field is null</response> 
+            <response code="404">If user id not found</response> 
+        </member>
         <member name="M:APIFuelStation.Controllers.UsersController.GetAllUsers">
             <summary>
             Get All of the Users List

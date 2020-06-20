@@ -53,9 +53,13 @@ namespace APIFuelStation
 
             // Add Tables and Repositories
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IDepartmentRepository, DepartmentRepository>();
+            services.AddScoped<IDesignationRepository, DesignationRepository>();
 
             // Add Validations Mapping
             services.AddTransient<IValidator<User>, UserValidator>();
+            services.AddTransient<IValidator<Designation>, DesignationValidator>();
+            services.AddTransient<IValidator<Department>, DepartmentValidator>();
 
             // Add CORS Policy
             services.AddCors(options =>
