@@ -15,6 +15,7 @@
             Get Single User By ID
             </summary>
             <returns>Get an User</returns>
+            <response code="404">If user id not found</response> 
         </member>
         <member name="M:APIFuelStation.Controllers.UsersController.CreateUser(APIFuelStation.Models.User)">
              <summary>
@@ -39,6 +40,40 @@
              <returns>A newly created User Item</returns>
              <response code="200">Returns the newly created item</response>
              <response code="400">If any of the field is null</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.UsersController.UpdateUser(System.Int32,APIFuelStation.Models.User)">
+             <summary>
+             Updates a user
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 {
+                     "id": 0,
+                     "firstName": "Maniruzzaman",
+                     "lastName": "Akash",
+                     "userName": "maniruzzaman",
+                     "email": "maniruzzamanAkash@gmail.com",
+                     "phoneNo": "01951233084",
+                     "password": "123456",
+                     "avatar": "string",
+                     "gender": true
+                 }
+            
+             </remarks>
+             <returns>A newly updated User Item</returns>
+             <response code="200">Returns the newly updated user</response>
+             <response code="400">If any of the field is null</response> 
+             <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.UsersController.DeleteUser(System.Int32)">
+            <summary>
+            Deletes a user
+            </summary>
+            <returns>Deleted User Item</returns>
+            <response code="200">Returns the newly deleted user</response>
+            <response code="400">If any of the field is null</response> 
+            <response code="404">If user id not found</response> 
         </member>
     </members>
 </doc>

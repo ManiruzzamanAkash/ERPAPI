@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
+using APIFuelStation.CommandBus;
 using APIFuelStation.CommandBus.Commands;
 using APIFuelStation.Models;
 using AutoMapper;
@@ -29,27 +30,14 @@ namespace APIFuelStation.Controllers {
 
         [HttpPost ("Login")]
         public async Task<IActionResult> Login ([FromBody] UserAuthCommand command) {
-            // User login = new User ();
-            // login.UserName = username;
-            // login.Password = password;
             var result = await _mediator.Send (command);
             return Ok (result);
-            // IActionResult response = Unauthorized ();
-
-            // var user = AuthenticateUser (login);
-            // if (user != null) {
-            //     var tokenStr = GenerateJSONWebToken (user);
-            //     response = Ok (new { token = tokenStr, user = user });
-            // }
-            // return response;
         }
 
-        private User AuthenticateUser (User loginUser) {
-            User user = null;
-            if (loginUser.UserName == "akash" && loginUser.Password == "123456") {
-                user = new User { UserName = "Akash", Email = "akash.corp@akij.net", FirstName = "Maniruzzaman", LastName = "Akash", Password = "123456", Gender = true };
-            }
-            return user;
+        [HttpPost ("Register")]
+        public async Task<IActionResult> Register ([FromBody] UserRegisterCommand command) {
+            var result = await _mediator.Send (command);
+            return Ok (result);
         }
 
     }
