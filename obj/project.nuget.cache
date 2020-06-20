@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "wWUQCQowDkImTPHV6nyVbhU4m9DfocVidn2bkbGgsxasa3WZu3mPP7zTkKjEIiBbCH3HxOwjeNTcStIcQ63wqg==",
+  "dgSpecHash": "coZ9v4A9eZ0ACMZtznDOTFBvqghXRfqiTYE1jLdbRlTPv3JGjxyxIi9XE2yHu5rB0eCs8Wby/Z01mzWh3Mp6CA==",
   "success": true,
   "projectFilePath": "C:\\Users\\akash.corp\\projs\\APIFuelStation\\APIFuelStation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\akash.corp\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\akash.corp\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\akash.corp\\.nuget\\packages\\bcrypt.net-next\\4.0.0\\bcrypt.net-next.4.0.0.nupkg.sha512",
+    "C:\\Users\\akash.corp\\.nuget\\packages\\fluentvalidation\\8.6.2\\fluentvalidation.8.6.2.nupkg.sha512",
+    "C:\\Users\\akash.corp\\.nuget\\packages\\fluentvalidation.aspnetcore\\8.6.2\\fluentvalidation.aspnetcore.8.6.2.nupkg.sha512",
+    "C:\\Users\\akash.corp\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\8.6.2\\fluentvalidation.dependencyinjectionextensions.8.6.2.nupkg.sha512",
     "C:\\Users\\akash.corp\\.nuget\\packages\\mediatr\\8.0.1\\mediatr.8.0.1.nupkg.sha512",
     "C:\\Users\\akash.corp\\.nuget\\packages\\mediatr.extensions.microsoft.dependencyinjection\\8.0.0\\mediatr.extensions.microsoft.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\akash.corp\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.5\\microsoft.aspnetcore.authentication.jwtbearer.3.1.5.nupkg.sha512",

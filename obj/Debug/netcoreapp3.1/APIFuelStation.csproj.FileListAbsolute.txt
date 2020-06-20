@@ -75,3 +75,6 @@ C:\Users\akash.corp\projs\APIFuelStation\obj\Debug\netcoreapp3.1\APIFuelStation.
 C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\APIFuelStation.xml
 C:\Users\akash.corp\projs\APIFuelStation\obj\Debug\netcoreapp3.1\APIFuelStation.xml
 C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\BCrypt.Net-Next.dll
+C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Users\akash.corp\projs\APIFuelStation\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
