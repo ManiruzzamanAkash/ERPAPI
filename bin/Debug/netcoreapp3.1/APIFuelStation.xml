@@ -134,6 +134,83 @@
             <response code="400">If any of the field is null</response> 
             <response code="404">If user id not found</response> 
         </member>
+        <member name="M:APIFuelStation.Controllers.EmployeesController.GetAllEmployees">
+            <summary>
+            Get All of the Employees List
+            </summary>
+            <returns>A New Employee </returns>
+        </member>
+        <member name="M:APIFuelStation.Controllers.EmployeesController.GetEmployeeById(System.Int32)">
+            <summary>
+            Get Single Employee By ID
+            </summary>
+            <returns>Get an Employee</returns>
+            <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.EmployeesController.CreateEmployee(APIFuelStation.Models.Employee)">
+             <summary>
+             Creates a New Employee
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 {
+                     "id": 0,
+                      "firstName": "string",
+                      "userName": "string",
+                      "email": "string",
+                      "phoneNo": "string",
+                      "gender": true,
+                      "lastName": "string",
+                      "password": "string",
+                      "avatar": "string",
+                      "joiningDate": "2020-06-23",
+                      "designationId": 0,
+                      "departmentId": 0
+                 }
+            
+             </remarks>
+             <returns>A newly created Employee Item</returns>
+             <response code="200">Returns the newly created item</response>
+             <response code="400">If any of the field is null</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.EmployeesController.UpdateEmployee(System.Int32,APIFuelStation.Models.Employee)">
+             <summary>
+             Updates an employee
+             </summary>
+             <remarks>
+             Sample request:
+            
+                 {
+                     "id": 1,
+                      "firstName": "string",
+                      "userName": "string",
+                      "email": "string",
+                      "phoneNo": "string",
+                      "gender": true,
+                      "lastName": "string",
+                      "password": "string",
+                      "avatar": "string",
+                      "joiningDate": "2020-06-23",
+                      "designationId": 0,
+                      "departmentId": 0
+                 }
+            
+             </remarks>
+             <returns>A newly updated Employee Item</returns>
+             <response code="200">Returns the newly updated user</response>
+             <response code="400">If any of the field is null</response> 
+             <response code="404">If user id not found</response> 
+        </member>
+        <member name="M:APIFuelStation.Controllers.EmployeesController.DeleteEmployee(System.Int32)">
+            <summary>
+            Deletes a user
+            </summary>
+            <returns>Deleted Employee Item</returns>
+            <response code="200">Returns the newly deleted user</response>
+            <response code="400">If any of the field is null</response> 
+            <response code="404">If user id not found</response> 
+        </member>
         <member name="M:APIFuelStation.Controllers.UsersController.GetAllUsers">
             <summary>
             Get All of the Users List
